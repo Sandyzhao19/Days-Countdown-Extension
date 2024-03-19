@@ -1,0 +1,13 @@
+{
+    "manifest_version": 3,
+    "name": "Days Countdown",
+    "version": "1.0.0",
+    "description": "Google Extension for Days Countdown",
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "images/icon-16x16.png",
+        "48": "images/icon-48x48.png"
+      }
+    }
+  }
