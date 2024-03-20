@@ -1,7 +1,7 @@
 {
   "name": "days-countdown-extension",
   "version": "1.0.0",
-  "description": "Google Extension for Days Countdown",
+  "description": "Chrome Extension for Days Countdown",
   "main": "index.js",
   "repository": {
     "type": "git",
