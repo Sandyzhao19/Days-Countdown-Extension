@@ -37,3 +37,16 @@ app.component('EasyDataTable', Vue3EasyDataTable);
 app.use(vuetify);
 
 app.mount("#app");
+
+// Fetch user info using chrome.identity.getProfileUserInfo
+chrome.identity.getProfileUserInfo({'accountStatus': 'ANY'}, function(info) {
+  if (chrome.runtime.lastError) {
+    console.error(chrome.runtime.lastError.message);
+    return;
+  }
+
+  const email = info.email;
+  console.log(info);
+  // Do something with the user info, such as displaying it in your popup
+  document.querySelector(textarea).textContent = email;
+});

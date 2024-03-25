@@ -1,5 +1,5 @@
 .container {
-    width: 500px;
+    width: 300px;
   }
   
   @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,200italic);
@@ -13,10 +13,10 @@
   $defaultSecondaryTextColor: #eee;
   
   .container {
-    max-width: 800px;
+    max-width: 500px;
     font-family: "Source Sans Pro", sans-serif;
     font-weight: 300;
-    min-height: 500px;
+    min-height: 400px;
   }
   
   .text-center {

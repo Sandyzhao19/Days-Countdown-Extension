@@ -1,31 +1,30 @@
 <template>
   <div class="container position-relative mt-4 mb-4">
-    <v-row>
-      <v-img src="./images/icon-16x16.png" alt="Days Countdown" />
-      <h2 class="title">
+    <v-row class="d-flex align-center mt-3 mb-4 mx-5">
+      <v-img src="./images/icon-16x16.png" alt="Days Countdown" style="max-width: 24px; max-height: 24px;"/>
+      <h3 class="title mx-3 flex-grow-1">
         Days Countdown
-        <v-btn
-            class="mx-3"
-            density="compact"
-            icon="mdi-plus"
-            @click="addDayMatter"
-        ></v-btn>
-      </h2>
+      </h3>
+      <v-btn
+          density="compact"
+          icon="mdi-plus"
+          @click="addDayMatter"
+      ></v-btn>
     </v-row>
 
+    <v-divider color="#9E9E9E"></v-divider>
 
-    <v-row v-if="showDateForm" class="mx-2 mt-4">
+    <v-row v-if="showDateForm" class="mx-2 mt-2">
       <v-col cols="6">
-        <v-text-field v-model="inputTitle" label="Task Title" variant="outlined"></v-text-field>
+        <v-text-field v-model="inputTitle" label="Task" variant="outlined"></v-text-field>
       </v-col>
       <v-col cols="6">
-        <VueDatePicker v-model="selectedDate" placeholder="Task Due" text-input/>
+        <VueDatePicker v-model="selectedDate" placeholder="Date" text-input/>
       </v-col>
     </v-row>
-
 
     <EasyDataTable :headers="taskHeaders" :items="sampleTaskItems" table-class-name="customize-table" hide-footer
-                   class="ml-4">
+                   class="pl-3 pb-3" table-height="450">
       <template #header="header">
       </template>
       <template #item-title="item">
@@ -41,6 +40,20 @@
         </div>
       </template>
     </EasyDataTable>
+
+    <v-divider></v-divider>
+    <v-row class="d-flex justify-between">
+      <v-col cols="auto">
+        <a href="https://sandyzhao19.github.io/" target="_blank" class="footer-link">
+          <v-btn density="compact" variant="plain" class="mt-3">© 2024 Sandy Z.</v-btn>
+        </a>
+      </v-col>
+      <v-col cols="auto">
+        <a href="https://www.buymeacoffee.com/sandyzhao" target="_blank" class="footer-link">
+          <v-btn density="compact" variant="plain" prepend-icon="mdi-heart" class="mt-3">Support</v-btn>
+        </a>
+      </v-col>
+    </v-row>
   </div>
 
 
@@ -78,17 +91,42 @@ export default {
         {
           id: 1,
           title: "Assignment Due",
-          dueDate: "03/24/2024",
+          dueDate: "03/29/2024",
         },
         {
           id: 2,
           title: "Photo Shoot",
-          dueDate: "03/24/2024",
+          dueDate: "03/31/2024",
         },
         {
           id: 3,
           title: "Ultra Festival",
           dueDate: "04/13/2024",
+        },
+        {
+          id: 4,
+          title: "Birthday",
+          dueDate: "08/23/2024",
+        },
+        {
+          id: 5,
+          title: "Ivy's Wedding",
+          dueDate: "09/28/2024",
+        },
+        {
+          id: 6,
+          title: "Graduation",
+          dueDate: "12/13/2024",
+        },
+        {
+          id: 7,
+          title: "Christmas",
+          dueDate: "12/24/2024",
+        },
+        {
+          id: 8,
+          title: "New Year",
+          dueDate: "01/01/2025",
         },
       ],
 
@@ -157,6 +195,11 @@ export default {
 }
 
 .vue3-easy-data-table__header {
-  height: 0 !important;
+  display: none !important;
+}
+
+.footer-link {
+  color: inherit !important;
+  text-decoration: none !important;
 }
 </style>
