@@ -47,6 +47,6 @@ chrome.identity.getProfileUserInfo({'accountStatus': 'ANY'}, function(info) {
 
   const email = info.email;
   console.log(info);
-  // Do something with the user info, such as displaying it in your popup
-  document.querySelector(textarea).textContent = email;
 });
+
+

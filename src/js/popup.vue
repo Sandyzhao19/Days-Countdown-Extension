@@ -70,6 +70,51 @@
 </template>
 
 <script>
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getDatabase, ref, onValue, child, get } from "firebase/database";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDTq_1kwcnAX28Ztq9_oRxv1vf-xRKO0QE",
+  authDomain: "days-countdown-57c13.firebaseapp.com",
+  databaseURL: "https://days-countdown-57c13-default-rtdb.firebaseio.com",
+  projectId: "days-countdown-57c13",
+  storageBucket: "days-countdown-57c13.appspot.com",
+  messagingSenderId: "560230548603",
+  appId: "1:560230548603:web:77bec4dbc9dadcd1454ede",
+  measurementId: "G-8MYN9SZYJR"
+};
+
+// Initialize Firebase
+const firebaseapp = initializeApp(firebaseConfig);
+const db = getDatabase(firebaseapp);
+
+console.log(db);
+
+const dbRef = ref(db);
+
+// Read data from the specified database reference
+get(child(dbRef, "/User")).then((snapshot) => {
+  console.log("Snapshot:", snapshot);
+  if (snapshot.exists()) {
+    const data = snapshot.val();
+    console.log("Data from Firebase Realtime Database:", data);
+  } else {
+    console.log("No data available at the specified path.");
+  }
+}).catch((error) => {
+  console.error("Error fetching data from Firebase Realtime Database:", error);
+});
+
+
+
+
+
 export default {
   data() {
     return {
